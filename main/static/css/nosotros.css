@@ -1,0 +1,83 @@
+.nosotros{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    gap: 3rem;
+}
+
+.nosotros .container-presentation{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0;
+    padding: 1rem;
+    color: black;
+    height: 52rem;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+header > .title{
+    font-size: 40px;
+}
+
+.welcome-text{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: center;
+}
+
+.welcome-text > p{
+    font-size: 20px;
+}
+
+.highlights{
+    background-color: #06BEE1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 1rem;
+}
+
+.highlight{
+    display: flex;
+    border: 1px solid black;
+    padding: 1rem;
+    flex-direction: column;
+    
+}
+
+.highlight > p{
+    font-size: 20px;
+}
+
+#scrollButton {
+    position: absolute;
+    bottom: 3rem;
+    right: 50%;
+    background-color: #2541B2;
+    color: white;
+    border: 1px solid black;
+    border-radius: 30%;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    outline: none;
+}
+
+#scrollButton:hover{
+    transition: 0.5s ease-in-out;
+    transform: scale(1.2);
+}
+
+.final{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1768AC;
+    padding: 1rem;
+    font-size: 15px;
+}

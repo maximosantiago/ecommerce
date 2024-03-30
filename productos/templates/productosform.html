@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<section class="upload-form">
+
+    <div class="form-up-product">
+        <h5>Mi producto</h5>
+        <form method="POST" action="" enctype="multipart/form-data" class="form-sign">
+
+            {%csrf_token%}
+
+            {{form.as_table}}
+    
+            <input type="submit" value="Subir producto" class="Sign">
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}

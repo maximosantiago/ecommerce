@@ -1,0 +1,9 @@
+<ul class="filters">
+    {%for categoria in categorias%}
+
+        <li class="filter">
+            <a href="{%url 'Filter' categoria.id%}">{{categoria.nombre}}</a>
+        </li>
+
+    {%endfor%}
+</ul>

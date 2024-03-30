@@ -1,0 +1,101 @@
+{% extends 'base.html'%}
+
+{%load static%}
+
+
+{%block title%} Productos encontrados {%endblock%}
+
+{%block content%}
+
+<section class="presentation">
+    <div class="main-title">
+        Productos encontrados
+    </div>
+    
+        <div class="selected_filters">
+            <div class="text">Filtrado por: </div>
+            {%for categoria in categorias%}{% if categoria.is_selected  == True %}
+                <div class="box-filter"> 
+                    <div class="filter"> {{categoria.nombre}}</div>
+                    <div class="exit">
+                        <a  href="{%url 'Filter' 3%}">
+                            <img  class="image-exit" src="{%static 'img/marca-x-remove.png'%}">
+                        </a>
+                    </div> 
+                </div>
+            {%endif%}{%endfor%}
+        </div>
+    
+</section>
+
+{%if found%}
+<section class="container">
+    
+    <aside class="box-filters">
+        {%include 'filtros.html'%}
+    </aside>
+
+    <div class="found">
+        
+            {%for producto in found%}
+                <div class="obj">
+
+                    <div id="carouselExample{{producto.id}}" class="carousel slide">
+
+                        <div class="carousel-inner">
+                            {%for imagen in producto.image.all%}
+                                <div class="carousel-item {% if forloop.first %}active{%endif%}">
+                                    <img src="{{imagen.image.url}}" class="d-block" alt="imagen del {{producto.titulo}}">
+                                </div>
+                            {%endfor%}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{producto.id}}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample{{producto.id}}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                    
+                    <div class="titulo">
+                        {{producto.titulo}}
+                    </div>
+                    <div class="categorias">
+                        {%if producto.categorias %}
+                            {%for categoria in producto.categorias.all%}
+                                {%if categoria.nombre != 'Todos'%}
+                                    <div class="categoria">
+                                        |{{categoria.nombre}} 
+                                    </div>
+                                {%endif%}
+                            {%endfor%}
+                        {%endif%}
+                    </div>
+                    <div class="contenido">
+                        {{producto.contenido}}
+                    </div>
+                    <div class="carro">
+                        <button class="btn-carro"><a>Añadir al carro</a></button>
+                    </div>
+                    <div class="autor">
+                        Publicado por {{producto.user}}
+                    </div>
+                    <div class="details">
+                        <button class="btn-details"><a href="{% url 'Detalles' producto.id%}">Ver detalles del producto</a></button>
+                    </div>
+                </div> 
+            {%endfor%}
+           
+    </div>
+
+
+</section>
+
+{%else%}
+<div class="notfound"><div class="container"><div class="text">No se han encontrado ningun producto. Intente buscar con sinonimos u otras palabras</div> </div></div>
+{%endif%} 
+
+
+{%endblock%}

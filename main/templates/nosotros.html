@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} Sobre nosotros {% endblock %}
+
+{% block head_content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/nosotros.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="nosotros">
+    <div class="container-presentation">
+        <header>
+            <p class="title">Bienvenido a Maxi.com</p>
+        </header>
+
+        <section class="welcome-text">
+            <p>🌟 Bienvenido a Maxi.com - Tu Destino para la Experiencia de Compras Única 🌟</p>
+            <p>Descubre un mundo de posibilidades en nuestro oasis de compras en línea, donde la elegancia se encuentra con la innovación. En Maxi.com, no solo vendemos productos, creamos experiencias. Sumérgete en un viaje de descubrimiento y encuentra artículos cuidadosamente seleccionados que elevan tu estilo de vida.</p>
+        </section>
+
+        <button id="scrollButton">
+            <span>&#9660;</span>
+        </button>
+    </div>
+    <section class="highlights" id="targetElement">
+        <div class="highlight">
+            <h2>Colecciones Exclusivas</h2>
+            <p>Desde moda hasta tecnología, presentamos colecciones únicas que reflejan las últimas tendencias y la más alta calidad.</p>
+        </div>
+
+        <div class="highlight">
+            <h2>Innovación a Tu Alcance</h2>
+            <p>Nos esforzamos por ofrecerte lo último en tecnología y diseño. ¡Descubre productos que harán que tu vida sea más fácil, emocionante y elegante!</p>
+        </div>
+
+        <div class="highlight" >
+            <h2>Envío Rápido y Seguro</h2>
+            <p>¿Ansioso por recibir tus compras? Nosotros también lo estamos. Ofrecemos envío rápido y seguro para que disfrutes de tus nuevos tesoros lo antes posible.</p>
+        </div>
+    </section>
+
+    <section class="final">
+        <p>💡 Servicio al Cliente Estelar: Tu satisfacción es nuestra prioridad. Nuestro equipo de atención al cliente está siempre listo para ayudarte, brindándote una experiencia de compra sin complicaciones.</p>
+        <p>Explora, Descubre, Compra - Maxi.com es Tu Destino de Compras Inigualable.</p>
+        <p>Únete a la comunidad de compradores que confían en nosotros para ofrecerles no solo productos, sino una experiencia de compra extraordinaria. Explora nuestro catálogo hoy mismo y descubre la magia de Maxi.com.</p>
+        <p>¡Gracias por elegirnos!</p>
+        <p>Maxi.com - Donde la Elegancia Encuentra la Innovación.</p>
+    </section>
+    
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    // Variable para almacenar el estado de visibilidad del botón
+    var buttonVisible = true;
+
+    document.getElementById('scrollButton').addEventListener('click', function() {
+        // Scroll suave hacia el elemento con id 'targetElement'
+        var targetElement = document.getElementById('targetElement');
+
+        if (targetElement.scrollIntoView) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        } else {
+            // Si 'behavior: smooth' no es compatible, simplemente realiza un desplazamiento instantáneo
+            window.scrollTo(0, targetElement.offsetTop);
+        }
+
+        // Ocultar o mostrar el botón al hacer clic
+        document.getElementById('scrollButton').style.display = 'none';
+        buttonVisible = false;
+    });
+
+    // Agregar un evento scroll para mostrar el botón nuevamente
+    window.addEventListener('scroll', function() {
+        var scrollButton = document.getElementById('scrollButton');
+
+        // Obtener la posición del scroll en relación con el cuadro de contenido
+        var contentBox = document.querySelector('.container-presentation');
+        var contentBoxTop = contentBox.getBoundingClientRect().top;
+
+        // Mostrar el botón si el usuario ha vuelto al área del cuadro
+        if (contentBoxTop >= 0 && !buttonVisible) {
+            scrollButton.style.display = 'block';
+            buttonVisible = true;
+        }
+    });
+</script>
+
+{% endblock %}

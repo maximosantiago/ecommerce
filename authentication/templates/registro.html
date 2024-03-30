@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block content%}
+
+<section>
+    <div class="authform">
+        {%if messages%}
+
+            {%for msg in messages%}
+
+                <li class="{{msg.tags}}">{{msg}}</li>
+
+            {%endfor%}
+
+        {%endif%}
+
+        <form method="post" action="" class="form-sign">
+            {% csrf_token %}
+            {{form.as_table}}
+
+            <input type="submit" value="Enviar" class="Sign">
+        </form>
+    </div>
+</section>
+
+
+{%endblock%}

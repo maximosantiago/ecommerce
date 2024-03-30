@@ -1,0 +1,60 @@
+{%extends 'base.html'%}
+
+{%load static%}
+
+{% block title %} Inicio {%endblock%}
+
+{%block content%}
+
+<section class="presentation">
+    <h3>Todo lo que quieras, en Maxi.com</h3>
+    <div class="main-title">
+        Maxi.com es una pagina en donde encontraras todo tipo de articulos
+        al mejor precio y con envios gratis hacia todo el pais
+    </div>
+</section>
+
+
+<section class="misproductos">
+
+    {% for producto in productos%}
+
+        <div class="producto">
+
+            <div id="carouselExample{{producto.id}}" class="carousel slide">
+
+                <div class="carousel-inner">
+                    {%for imagen in producto.image.all%}
+                        <div class="carousel-item {% if forloop.first %}active{%endif%}">
+                            <img src="{{imagen.image.url}}" class="d-block w-100" alt="imagen del {{producto.titulo}}">
+                        </div>
+                    {%endfor%}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample{{producto.id}}" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample{{producto.id}}" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            
+            <div class="titulo">
+                {{producto.titulo}}
+            </div>
+            <div class="contenido">
+                {{producto.contenido}}
+            </div>
+            <div class="button">
+                <button class="btn-com">
+                    <a href="{%url 'Detalles' producto.id%}">Comprar</a>
+                </button>
+            </div>
+        </div>
+
+    {%endfor%}
+
+</section>
+
+{%endblock%}

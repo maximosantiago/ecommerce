@@ -1,0 +1,338 @@
+.manipulation{
+    
+    display: flex;
+    border: 1px black solid;
+    justify-content: center;
+    gap: 10px;
+}
+
+.manipulation .option{
+    background-color: rgb(236, 230, 230);
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.manipulation .option .upload{
+    text-decoration: none;
+}
+
+
+.manipulation{
+    
+    display: flex;
+    border: 1px black solid;
+    justify-content: center;
+    gap: 10px;
+}
+
+.manipulation .option{
+    background-color: rgb(236, 230, 230);
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.manipulation .option .upload{
+    text-decoration: none;
+}
+
+
+.misproductos{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: white;
+}
+
+.misproductos .producto{
+    display: grid;
+    grid-template-columns: auto auto auto, auto;
+    grid-template-rows: auto auto auto auto auto;
+    background-color: antiquewhite;
+    width: 32rem;
+    height: 32rem;
+    gap: 10px;
+    margin: 2rem;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 2rem;
+}
+
+
+.misproductos .producto .carousel{
+    grid-column: 1/4;
+    grid-row: 1/2;
+
+}
+
+.misproductos .producto .titulo{
+    grid-column: 1/4;
+    grid-row: 3/3;
+    text-align: center;
+    font-size: medium
+}
+
+.misproductos img{
+    height: 20rem;
+    border-radius: 1rem;
+}
+
+.misproductos .producto .contenido{
+
+    grid-column: 1/4;
+    grid-row: 4/4;
+    text-wrap: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Puedes agregar "..." al final del texto si es muy largo */
+    white-space: nowrap;
+
+
+}
+
+.misproductos .producto .button{
+    grid-column: 1/4;
+    grid-row: 5/5;
+    position: relative;
+    height: 2rem;
+}
+
+.misproductos .producto .button .btn-del{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(221, 7, 7);
+    color: white;
+}
+
+.misproductos .producto .button .btn-com{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(24, 206, 34);
+    color: white;
+}
+
+
+.top-mpro{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+
+.carousel{
+    height: 20rem;
+    width: 30rem;
+    position: relative;
+}
+
+.carousel-inner{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.found .carousel-item img{
+    position: absolute;
+    height: 20rem;
+    width: 30rem;
+    border: 1.5px solid black;
+    border-radius: 2rem;
+}
+
+
+.container{
+    display: flex;
+    justify-content: flex-start;
+    margin: 2rem 0;
+}
+
+.container .box-filters{
+    flex: 1;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container .box-filters .filters{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    list-style: none;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.container .box-filters .filters .filter{
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.container .found{
+    flex: 2;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.container .found .obj{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 18rem 2rem 0.5rem;
+    background-color: white;
+    border: 2px solid rgba(169, 169, 169, 0.5);
+    padding: 1rem;
+    gap: 0.5rem;
+    height: 25rem;
+}
+.found .obj .carousel{
+    grid-column: 1/4;
+    grid-row: 1/3;
+}
+
+.found .obj .titulo{
+    grid-column: 1/1;
+    grid-row: 3/4;
+    font-weight: bold;
+    
+}
+
+.found .obj .categorias{
+    display: flex;
+    grid-column: 2/2;
+    grid-row: 3/4;
+    font-weight: bold;
+}
+
+.found .obj .categorias .categoria{
+    
+    color: rgba(128, 128, 128, 0.7);
+}
+
+
+
+.found .obj .contenido{
+    grid-column: 4/6;
+    grid-row: 1/2;
+    text-wrap: wrap;
+    overflow: hidden;
+}
+
+.found .obj .autor{
+    color: rgba(128, 128, 128, 0.7);
+    font-size: 1rem;
+    text-align: right;
+    grid-column: 5/5;
+    grid-row: 3/4;
+    margin-bottom: 0;
+}
+
+.found .obj .carro{
+
+    color: white;
+    position:relative;
+    height: 2rem;
+    border: 1.5px solid black;
+    grid-column: 4/4;
+    grid-row: 2/3;
+    width: 10rem;
+}
+
+.carro .btn-carro{
+    background-color: aqua;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: none;
+}
+
+.found .obj .details{
+    background-color: rgba(128, 128, 128, 0.7);
+    height: 2rem;
+    width: 10rem;
+    grid-column: 5/5;
+    grid-row: 2/3;
+    border: 1.5px solid black;
+    position: relative;
+}
+
+.details .btn-details{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.7);
+    border: none;
+    text-wrap: nowrap;
+    font-size: 85%
+}
+
+.btn-details > a{
+    text-decoration: none;
+    color: black;
+}
+
+.selected_filters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.selected_filters .text{
+    margin-right: 1rem;
+}
+
+.selected_filters > .box-filter{
+    display: flex;
+    justify-content: start;
+    gap: 0.6rem;
+    background-color: #666666;
+    border-radius: 1rem;
+    border: 1px solid black;
+    padding: 6px;
+
+}
+
+.selected_filters .box-filter .filter{
+    
+    color:black;
+    
+}
+
+.selected_filters .box-filter .exit .image-exit{
+    width: 1.5rem;
+    height: 100%;
+}
+
+.notfound{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    
+}
+
+.notfound .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90rem;
+    height: 30rem;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+.notfound .container .text{
+    
+    color: #666666;
+    
+}
+
+
